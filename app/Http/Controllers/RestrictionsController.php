@@ -27,8 +27,8 @@ class RestrictionsController extends Controller
                     
                     $restriction->fromTime = $fromTime;
                     $restriction->toTime = $toTime;
-                    $restriction->user_id = $user;
-                    $restriction->apps_id = $app;
+                    $restriction->user_id = $user->id;
+                    $restriction->apps_id = $app->id;
                     $restriction->save();
                     return response()->json(["Success" => "Se ha añadido la restriction"]);
                 }else{
